@@ -2,6 +2,8 @@ class Board
   attr_accessor :cups
 
   def initialize(name1, name2)
+    @name1 = name1
+    @name2 = name2
     @cups = Array.new(14){[]}
     self.place_stones
   end
@@ -28,12 +30,18 @@ class Board
 
   def make_move(start_pos, current_player_name)
     hand = self.cups[start_pos] 
-    self.cups[start_pos] == []
+    self.cups[start_pos] = []
 
       i = (start_pos + 1) % self.cups.length
       while i < self.cups.length
-        if !hand.empty? 
-        self.cups[i % self.cups.length] << hand.shift
+        if !hand.empty?
+          if current_player_name == @name1
+            self.cups[i % self.cups.length] << hand.shift unless self.cups[13]
+          elsif current_player_name == @name2
+            self.cups[i % self.cups.length] << hand.shift unless self.cups[6]
+          else 
+            self.cups[i % self.cups.length] << hand.shift
+          end
         end
       i += 1
       end
