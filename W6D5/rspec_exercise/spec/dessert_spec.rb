@@ -7,8 +7,8 @@ Be sure to look over the solutions when you're done.
 =end
 
 describe Dessert do
+  subject(:cake) { Dessert.new("cake", 100, chef)}
   let(:chef) { double("chef") }
-  let(:cake) { Dessert.new("cake", 100, chef)}
 
   describe "#initialize" do
     it "sets a type" do
@@ -62,6 +62,8 @@ end
 
   describe "#serve" do
     it "contains the titleized version of the chef's name" do
+
+      expect(cake.serve).to eq("Chef Chef the Great Baker has made a 100 cakes!")
   end
 end
 
