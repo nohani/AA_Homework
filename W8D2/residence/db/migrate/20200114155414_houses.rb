@@ -1,4 +1,4 @@
-class Houses < ActiveRecord::Migration[5.2]
+class asdsa < ActiveRecord::Migration[5.2]
   def change
   end
 end

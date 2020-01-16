@@ -1,6 +1,6 @@
 class House < ApplicationRecord
-    validates :address, presence true
-    validates :owner_id, presence true
+    validates :address, presence: true
+    validates :owner_id, presence: true
 
     belongs_to :owner, 
         class_name: "Person",

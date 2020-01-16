@@ -1,7 +1,7 @@
 class Person < ApplicationRecord
-    validates :fname, presence true
-    validates :lname, presence true
-    validates :house_id, presence true
+    validates :fname, presence: true
+    validates :lname, presence: true
+    validates :house_id, presence: true
 
     has_many :houses,
         class_name: "House",

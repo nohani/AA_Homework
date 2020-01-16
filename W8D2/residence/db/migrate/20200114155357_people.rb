@@ -1,4 +1,4 @@
-class People < ActiveRecord::Migration[5.2]
+class DSAD < ActiveRecord::Migration[5.2]
   def change
   end
 end
